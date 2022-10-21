@@ -1,0 +1,238 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playball&family=Roboto:wght@300;400;700&display=swap");
+:root{
+    // colors
+    --main-color:#8a581c;
+    --black:#17171a;
+    --bg:#010103;
+    --border:.1rem solid rgba(255,255,255,.3);
+    --light:#fff;
+    
+    // typography
+
+    --font-large:2rem;
+    --font-medium:1.5rem;
+    --font-small:1rem;
+    --font-weight-bold:700;
+    --font-weight-semi-bold:500;
+    --font-weight-normal:normal;
+    --header-height:4rem
+
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: all .3s ease;
+}
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+html::-webkit-scrollbar{
+    background-color: var(--black);
+    padding: 10px;
+    width: 5px;
+    cursor: grab;
+}
+
+html::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 10px;
+    cursor: grab;   
+}
+
+body{
+    width: 100%;
+    background-color: var(--bg);
+    font-family: 'Roboto', sans-serif;
+    // font-family: Arial, Helvetica, sans-serif;
+    color: var(--light);
+    overflow-x: hidden;
+}
+
+section{
+    padding-top: 2rem;
+}
+
+.swiper-pagination-bullet{
+    background: var(--main-color);
+}
+
+.swiper-pagination-bullet-active{
+    background: var(--main-color);
+}
+
+
+.swiper-button-next,
+.swiper-button-prev{
+    color: var(--main-color);
+    font-size: var(--font-small);
+    background-color: var(--black);
+    padding: 20px;
+    top: 85%;
+    // margin-top: 0;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after{
+    font-size: var(--font-small);
+}
+
+.swiper-button-prev{
+    margin-right: 10px;
+    left: 90%;
+    transform: translateX(-10%);
+}
+
+h1,h2,h3{
+    font-size: var(--font-medium);
+}
+a{
+    text-decoration: none;
+    color: var(--light);
+}
+
+ul,li{
+    list-style: none;
+}
+.container{
+    padding: 2rem 3%;
+    overflow: hidden;
+}
+
+.flex{
+    display: flex;
+}
+
+.between{
+    justify-content: space-between;
+}
+.center{
+    align-items: center;
+}
+
+.close,
+.open{
+    display: none;
+}
+
+.grid{
+    display: grid;
+    gap: 20px;
+}
+
+.button{
+    display: inline-block;
+    margin-top: 30px;
+    border: 0;
+    padding: 1rem 2rem;
+    color: var(--light);
+    background-color: var(--main-color);
+    font-size: var(--font-small);
+    text-transform: capitalize;
+    cursor: pointer;
+    box-shadow: 0 2px 2px 2px var(--main-color);
+    position: relative;
+    z-index: 1;
+}
+
+.button:hover{
+    transform: scale(.98);
+}
+
+.button::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid var(--main-color);
+    position: absolute;
+    top:-5px;
+    left:-7px;
+}
+
+
+.heading{
+    text-align: center;
+
+    &__title{
+        font-size: var(--font-large);
+        padding: 2rem 0;
+        text-transform: capitalize;
+
+    }
+
+    &__subtitle{
+        color: var(--main-color);
+        font-size: var(--font-small);
+        text-transform: uppercase;
+        letter-spacing: 1.2;
+    }
+
+    &__ribon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+    }
+}
+
+
+.ribbon{
+    width: 35px;
+    height: 19px;
+    background: linear-gradient(to right,var(--black),  var(--main-color));
+    clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%);
+    z-index: -1;
+}
+
+
+@media screen and (max-width:767px) {
+    :root{
+        // typography
+        --font-large:1.2rem;
+        --font-medium:1rem;
+        --font-small:1rem;
+        --font-weight-bold:700;
+        --font-weight-semi-bold:500;
+        --font-weight-normal:normal;
+        
+    } 
+    .swiper-button-prev{
+    left: 76%;
+    transform: translateX(-30%);
+    margin-right: 10px;
+    }
+    .close,
+     .open{
+         display: block;
+     } 
+    .heading{
+        text-align: center;
+
+        &__title{
+            font-size: var(--font-large);
+            padding: .5rem 0;
+
+        }
+
+        &__subtitle{
+            color: var(--main-color);
+            font-size: var(--font-small);
+            text-transform: uppercase;
+            letter-spacing: 1.2;
+        }
+
+        &__ribon{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+        }
+    }
+}
